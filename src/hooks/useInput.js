@@ -4,7 +4,7 @@ export const useInput = ({
   focus = false,
   select = false,
   initialValue = '',
-  hoverBgColor = ['#fff', '#eee'],
+  hoverBgColor = ['#FFF', '#EEE'],
   hoverTextColor = ['#000', '#000'],
   OnChange = () => null,
   OnFocus = () => null,

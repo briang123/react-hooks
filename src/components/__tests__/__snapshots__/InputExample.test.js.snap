@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputExample integration test using the useInput hook <InputExample /> Should match snapshot 1`] = `
+<InputExample
+  focus={false}
+  onChange={[Function]}
+  select={false}
+  value=""
+/>
+`;
+
+exports[`InputExample integration test using the useInput hook <InputExample value="foo" /> Should match snapshot 1`] = `
+<InputExample
+  focus={false}
+  onChange={[Function]}
+  select={false}
+  value="foo"
+/>
+`;
+
+exports[`InputExample integration test using the useInput hook <InputExample value="foo" focus={false} select={true} /> Should match snapshot 1`] = `
+<InputExample
+  focus={false}
+  onChange={[Function]}
+  select={true}
+  value="foo"
+/>
+`;
+
+exports[`InputExample integration test using the useInput hook <InputExample value="foo" focus={true} /> Should match snapshot 1`] = `
+<InputExample
+  focus={true}
+  onChange={[Function]}
+  select={false}
+  value="foo"
+/>
+`;
+
+exports[`InputExample integration test using the useInput hook <InputExample value="foo" focus={true} select={true} /> Should match snapshot 1`] = `
+<InputExample
+  focus={true}
+  onChange={[Function]}
+  select={true}
+  value="foo"
+/>
+`;
+
+exports[`InputExample integration test using the useInput hook <InputExample value="foo" onChange={handleChange} /> Should match snapshot 1`] = `
+<InputExample
+  focus={false}
+  onChange={[MockFunction]}
+  select={false}
+  value="foo"
+/>
+`;
