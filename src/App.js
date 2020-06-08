@@ -18,6 +18,7 @@ import black from './black.png';
 import green from './green.png';
 // import { FocusSelect } from './components/FocusSelect';
 import { InputExample } from './components/InputExample';
+import { InputExamplePassRef } from './components/InputExamplePassRef';
 function App() {
   return (
     <PageWrapper>
@@ -32,6 +33,8 @@ function App() {
           <Theme />
           {/* <FocusSelect /> */}
           <InputExample />
+
+          <InputExamplePassRef />
           <Script />
 
           <Toggle />

@@ -22,7 +22,7 @@ describe('InputExample integration test using the useInput hook', () => {
 
   describe('<InputExample />', () => {
     beforeEach(() => {
-      let { debug, getByText, getByTestId } = render(<InputExample />);
+      let { getByText, getByTestId } = render(<InputExample />);
       initializeElements(getByText, getByTestId);
     });
 

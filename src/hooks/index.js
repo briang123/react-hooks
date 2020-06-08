@@ -14,6 +14,7 @@ export * from './useSyncedRef';
 export * from './useFocus';
 export * from './useFocusState';
 export * from './useInput';
+export * from './useInputPassRef';
 export * from './useInputChange';
 export * from './useInputWithNestedHooks';
 export * from './useHoverExposedMouseEvents';

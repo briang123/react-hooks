@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HOOK: useInputPassRef Calling hook with default args then changing value 1`] = `
+Object {
+  "current": Object {
+    "bgColor": "#FFF",
+    "bind": Object {
+      "onBlur": [Function],
+      "onChange": [Function],
+      "onFocus": [Function],
+      "onMouseLeave": [Function],
+      "onMouseOver": [Function],
+    },
+    "color": "#000",
+    "dirty": false,
+    "focused": true,
+    "hasValue": false,
+    "isHovered": false,
+    "selected": false,
+    "val": "",
+  },
+  "error": undefined,
+}
+`;
+
+exports[`HOOK: useInputPassRef Calling with initial value of foo, changing it, and listening for change event 1`] = `
+Object {
+  "current": Object {
+    "bgColor": "#FFF",
+    "bind": Object {
+      "onBlur": [Function],
+      "onChange": [Function],
+      "onFocus": [Function],
+      "onMouseLeave": [Function],
+      "onMouseOver": [Function],
+    },
+    "color": "#000",
+    "dirty": true,
+    "focused": true,
+    "hasValue": true,
+    "isHovered": false,
+    "selected": false,
+    "val": "foobar",
+  },
+  "error": undefined,
+}
+`;
+
+exports[`HOOK: useInputPassRef Calling with initial value of foo, focusing and selecting by default 1`] = `
+Object {
+  "current": Object {
+    "bgColor": "#FFF",
+    "bind": Object {
+      "onBlur": [Function],
+      "onChange": [Function],
+      "onFocus": [Function],
+      "onMouseLeave": [Function],
+      "onMouseOver": [Function],
+    },
+    "color": "#000",
+    "dirty": false,
+    "focused": true,
+    "hasValue": true,
+    "isHovered": false,
+    "selected": true,
+    "val": "foo",
+  },
+  "error": undefined,
+}
+`;
