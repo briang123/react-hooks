@@ -19,6 +19,7 @@ import green from './green.png';
 // import { FocusSelect } from './components/FocusSelect';
 import { InputExample } from './components/InputExample';
 import { InputExamplePassRef } from './components/InputExamplePassRef';
+import { FocusExample } from './components/FocusExample';
 function App() {
   return (
     <PageWrapper>
@@ -32,9 +33,15 @@ function App() {
           <h2>Super Cool</h2>
           <Theme />
           {/* <FocusSelect /> */}
-          <InputExample />
 
-          <InputExamplePassRef />
+          <h2>Focus Example</h2>
+          <FocusExample value="testing" focus={true} select={true} />
+          <FocusExample value="testing 2" focus={false} select={true} />
+
+          <h2>Input Example</h2>
+          <InputExample />
+          <h2>Input Example (Pass Ref)</h2>
+          <InputExamplePassRef focus={true} select={true} value="testing" />
           <Script />
 
           <Toggle />

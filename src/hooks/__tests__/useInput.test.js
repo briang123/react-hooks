@@ -1,7 +1,5 @@
-import React from 'react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useInput } from '../useInput';
-// import { useInputPassRef } from '../useInputPassRef';
 
 describe('HOOK: useInput', () => {
   let props;
@@ -65,23 +63,3 @@ describe('HOOK: useInput', () => {
     // expect(value).toBe('foo');
   });
 });
-
-// const [
-//   inputRef,
-//   inputValue,
-//   bind,
-//   { hasValue, dirty, isHovered, bgColor, color, focused, selected },
-// ] = useInput({
-//   focus,
-//   select,
-//   initialValue: value,
-//   OnChange: onChange,
-// });
-
-// ** RETURN **
-// [
-//   ref,
-//   value,
-//   bind,
-//   { hasValue, dirty, isHovered, focused, selected, bgColor, color },
-// ]

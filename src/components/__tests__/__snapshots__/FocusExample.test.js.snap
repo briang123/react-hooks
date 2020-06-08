@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FocusExample integration test using the useFocus custom hook <FocusExample /> Should match snapshot 1`] = `<FocusExample />`;
+
+exports[`FocusExample integration test using the useFocus custom hook <FocusExample focus={true} /> Should match snapshot 1`] = `
+<FocusExample
+  focus={true}
+/>
+`;
+
+exports[`FocusExample integration test using the useFocus custom hook <FocusExample value="foo" focus={true} select={true} /> Should match snapshot 1`] = `
+<FocusExample
+  focus={true}
+  select={true}
+  value="foo"
+/>
+`;

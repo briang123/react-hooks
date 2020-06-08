@@ -12,6 +12,14 @@ import {
 
 export const FocusSelect = () => {
   const [myValue, setMyValue] = useState('');
+  const [myFocusSelectValue, setMyFocusSelectValue] = useState('focus test');
+
+  const focusRef = useRef();
+  const {
+    focused: fsFocused,
+    selected: fsSelected,
+    focusEvents,
+  } = useFocus(focusRef, { selected: true, focused: true });
 
   const disableInput = () => myValue === 'disable input';
 
@@ -136,34 +144,46 @@ export const FocusSelect = () => {
   const showInput = true;
   return (
     showInput && (
-      <div>
-        Focused: ({focused1 ? 'Yes' : 'No'})<br />
-        Selected: ({selected1 ? 'Yes' : 'No'})<br />
-        Has Value: ({hasValue1 ? 'Yes' : 'No'})<br />
-        Is Dirty: ({dirty1 ? 'Yes' : 'No'})<br />
-        Hovered: ({isHovered1 ? 'Yes' : 'No'})<br />
-        <input
-          ref={input1}
-          {...events1}
-          value={value1}
-          style={{ background: bgColor1, color: color1 }}
-        />
-        <br />
-        Focused: ({focused2 ? 'Yes' : 'No'})<br />
-        Selected: ({selected2 ? 'Yes' : 'No'})<br />
-        Has Value: ({hasValue2 ? 'Yes' : 'No'})<br />
-        Is Dirty: ({dirty2 ? 'Yes' : 'No'})<br />
-        Hovered: ({isHovered2 ? 'Yes' : 'No'})<br />
-        <input
-          ref={input2}
-          {...events2}
-          value={value2}
-          style={{
-            background: bgColor2,
-            color: color2,
-          }}
-        />
-        {/* <input
+      <>
+        <div>
+          <h2>useFocus</h2>
+          <input
+            ref={focusRef}
+            {...focusEvents}
+            value={myFocusSelectValue}
+            onChange={(e) => setMyFocusSelectValue(e.target.value)}
+          />
+        </div>
+        <hr />
+        <div>
+          <h2>useInput</h2>
+          Focused: ({focused1 ? 'Yes' : 'No'})<br />
+          Selected: ({selected1 ? 'Yes' : 'No'})<br />
+          Has Value: ({hasValue1 ? 'Yes' : 'No'})<br />
+          Is Dirty: ({dirty1 ? 'Yes' : 'No'})<br />
+          Hovered: ({isHovered1 ? 'Yes' : 'No'})<br />
+          <input
+            ref={input1}
+            {...events1}
+            value={value1}
+            style={{ background: bgColor1, color: color1 }}
+          />
+          <br />
+          Focused: ({focused2 ? 'Yes' : 'No'})<br />
+          Selected: ({selected2 ? 'Yes' : 'No'})<br />
+          Has Value: ({hasValue2 ? 'Yes' : 'No'})<br />
+          Is Dirty: ({dirty2 ? 'Yes' : 'No'})<br />
+          Hovered: ({isHovered2 ? 'Yes' : 'No'})<br />
+          <input
+            ref={input2}
+            {...events2}
+            value={value2}
+            style={{
+              background: bgColor2,
+              color: color2,
+            }}
+          />
+          {/* <input
           ref={input1}
           {...inputEvents1}
           {...focusEvents1}
@@ -172,11 +192,12 @@ export const FocusSelect = () => {
           disabled={disabled}
           style={{ background: isHovered1 ? 'yellow' : 'white' }}
         /> */}
-        {/* <br />
+          {/* <br />
         Focused2: ({focused2 ? 'Yes' : 'No'})<br />
         Selected2: ({selected2 ? 'Yes' : 'No'})<br />
         <input ref={inputRef2} {...events2} /> */}
-      </div>
+        </div>
+      </>
     )
   );
 };

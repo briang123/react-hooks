@@ -1,57 +1,41 @@
-import { useEffect, useCallback, useState } from 'react';
-import { useSyncedRef } from 'hooks';
+import { useEffect, useMemo, useState } from 'react';
 
-export const useFocus = ({
-  outerRef = null,
-  focus = false,
-  select = false,
-  OnFocus = () => null,
-  OnBlur = () => null,
-}) => {
-  console.log('select', select);
-  const ref = useSyncedRef(outerRef);
-  // console.log(ref, outerRef);
-  const [focused, setFocused] = useState(false);
-  const [selected, setSelected] = useState(false);
+export const useFocus = (
+  ref,
+  { focus = false, select = false, OnFocus = () => null, OnBlur = () => null }
+) => {
+  const [focused, setFocused] = useState(focus);
+  const [selected, setSelected] = useState(select);
 
   const handleSelection = (value) => {
-    console.log('handleSelection', { refCurrent: ref.current, select, value });
     if (!ref.current) return;
-    ref.current.value && setSelected(select && value);
+    ref.current.value ? setSelected(select && value) : setSelected(false);
   };
 
-  const focusEvents = {
-    onFocus: useCallback(
-      (e) => {
-        console.log('onfocus', { select, selected });
+  const bind = useMemo(() => {
+    return {
+      onFocus: (e) => {
         setFocused(true);
-        handleSelection(select);
+        handleSelection(true);
         OnFocus(e);
       },
-      [focused]
-    ),
-    onBlur: useCallback(
-      (e) => {
-        console.log('onblur', { select, selected });
+      onBlur: (e) => {
         setFocused(false);
         handleSelection(false);
         OnBlur(e);
       },
-      [focused, selected]
-    ),
-  };
+    };
+  }, []);
 
   useEffect(() => {
     if (!ref.current) return;
-    focus && ref.current.focus();
-  }, [ref, focused]);
+    focused && ref.current.focus();
+  }, [focused]);
 
   useEffect(() => {
-    console.log(ref);
     if (!ref.current) return;
-    select && selected && ref.current.select();
-  }, [ref, selected]);
+    selected && selected && ref.current.select();
+  }, [selected]);
 
-  // console.log('useFocus hook', { focused, selected, focusEvents });
-  return [ref, { focused, selected, focusEvents }];
+  return { focused, selected, bind };
 };
